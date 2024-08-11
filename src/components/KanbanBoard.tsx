@@ -75,6 +75,19 @@ function KanbanBoard() {
     }
     setTasks([...tasks, newTask])
   }
+
+  const deleteTask = (id: Id) => {
+    const newTasks = tasks.filter(task => task.id !== id)
+    setTasks(newTasks)
+  }
+
+  const updateTaskContent = (id: Id, content: string) => {
+    const newTasks = tasks.map(task => {
+      if (task.id !== id) return task
+      return { ...task, content }
+    })
+    setTasks(newTasks)
+  }
   return (
     <div className="m-auto flex min-h-screen  px-[40px]  w-full items-center overflow-x-auto overflow-y-hidden">
       <DndContext
@@ -91,7 +104,10 @@ function KanbanBoard() {
                   column={col}
                   deleteColumn={deleteColumn}
                   updateColumn={updateColumn}
+                  updateTaskContent={updateTaskContent}
                   createTask={createTask}
+                  deleteTask={deleteTask}
+                  tasks={tasks.filter(task => task.columnId === col.id)}
                 />
               ))}
             </SortableContext>
@@ -114,7 +130,10 @@ function KanbanBoard() {
                 column={activeColumn}
                 deleteColumn={deleteColumn}
                 updateColumn={updateColumn}
+                deleteTask={deleteTask}
+                updateTaskContent={updateTaskContent}
                 createTask={createTask}
+                tasks={tasks.filter(task => task.columnId === activeColumn.id)}
               />
             )}
           </DragOverlay>,
