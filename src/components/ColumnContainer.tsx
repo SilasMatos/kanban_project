@@ -17,16 +17,15 @@ interface Props {
   updateTaskContent: (id: Id, content: string) => void
 }
 
-function ColumnContainer(props: Props) {
-  const {
-    column,
-    deleteColumn,
-    updateColumn,
-    createTask,
-    tasks,
-    deleteTask,
-    updateTaskContent
-  } = props
+function ColumnContainer({
+  column,
+  deleteColumn,
+  updateColumn,
+  createTask,
+  tasks,
+  deleteTask,
+  updateTaskContent
+}: Props) {
   const [editMode, setEditMode] = useState(false)
 
   const tasksIds = useMemo(() => {
@@ -58,7 +57,7 @@ function ColumnContainer(props: Props) {
       <div
         ref={setNodeRef}
         style={style}
-        className="bg-columnBackground w-[350px] h-[500px] max-h-[500px] rounded-md flex flex-col opacity-60 border-2 border-rose-500"
+        className="bg-columnBackground w-[350px] h-[500px] max-h-[500px] rounded-md flex flex-col opacity-60 border-2 border-sky-500"
       ></div>
     )
   }
@@ -84,7 +83,7 @@ function ColumnContainer(props: Props) {
           {!editMode && column.title}
           {editMode && (
             <input
-              className="bg-black focus:border-rose-500 border rounded outline-none px-2"
+              className="bg-black focus:border-sky-500 border rounded outline-none px-2"
               autoFocus
               value={column.title}
               onChange={e => updateColumn(column.id, e.target.value)}
@@ -121,7 +120,7 @@ function ColumnContainer(props: Props) {
       </div>
       <div className="w-full">
         <button
-          className="flex gap-2 w-full items-center border-columnBackground border-2 rounded-md p-4 border-x-columnBackground hover:bg-mainBackground hover:text-rose-500 active:bg-black "
+          className="flex gap-2 w-full items-center border-columnBackground border-2 rounded-md p-4 border-x-columnBackground hover:bg-mainBackground hover:text-sky-500 active:bg-black "
           onClick={() => {
             createTask(column.id)
           }}
