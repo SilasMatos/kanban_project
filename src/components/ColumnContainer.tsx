@@ -76,10 +76,7 @@ function ColumnContainer({
         }}
         className="bg-mainBackground text-md h-[60px] cursor-grab rounded-md rounded-b-none p-3 font-bold border-columnBackground border-3 flex justify-between items-center"
       >
-        <div className="flex gap-2">
-          <div className="flex items-center justify-center bg-columnBackground text-sm rounded-full">
-            0
-          </div>
+        <div className="flex gap-2 ">
           {!editMode && column.title}
           {editMode && (
             <input

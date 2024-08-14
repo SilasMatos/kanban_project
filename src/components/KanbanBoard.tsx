@@ -2,38 +2,47 @@ import { DndContext, DragOverlay } from '@dnd-kit/core'
 import { SortableContext } from '@dnd-kit/sortable'
 import { createPortal } from 'react-dom'
 import ColumnContainer from './ColumnContainer'
-import PlusIcon from '../icons/PlusIcon'
+
 import TaskCard from './TaskCard'
 import useKanbanBoardLogic from '../hooks/useKanbanBoardLogic'
+import img from '../assets/img.png'
 
-function KanbanBoard() {
-  const {
-    columns,
-    columnsId,
-    activeColumn,
-    activeTask,
-    tasks,
-    sensors,
-    addColumn,
-    deleteColumn,
-    updateColumn,
-    createTask,
-    deleteTask,
-    updateTaskContent,
-    onDragStart,
-    onDragEnd,
-    onDragOver
-  } = useKanbanBoardLogic()
+function KanbanBoard({
+  columns,
+  columnsId,
+  activeColumn,
+  activeTask,
+  tasks,
+  sensors,
+  deleteColumn,
+  updateColumn,
+  createTask,
+  deleteTask,
+  updateTaskContent,
+  onDragStart,
+  onDragEnd,
+  onDragOver
+}: ReturnType<typeof useKanbanBoardLogic>) {
+  if (!columns.length) {
+    return (
+      <div className="m-auto flex flex-col  px-[40px] w-full items-center overflow-x-auto justify-center overflow-y-hidden">
+        <img src={img} alt="" className="max-w-[500px]" />
+        <h1 className="text-white font-semibold text-2xl">
+          Não exite colunas criadas
+        </h1>
+      </div>
+    )
+  }
 
   return (
-    <div className="m-auto flex min-h-screen px-[40px] w-full items-center overflow-x-auto overflow-y-hidden">
+    <div className="m-auto flex  px-[40px] w-full items-center overflow-x-auto overflow-y-hidden">
       <DndContext
         sensors={sensors}
         onDragStart={onDragStart}
         onDragEnd={onDragEnd}
         onDragOver={onDragOver}
       >
-        <div className="m-auto flex gap-4">
+        <div className="m-auto flex gap-4 mt-3">
           <div className="flex gap-4">
             <SortableContext items={columnsId}>
               {columns.map(col => (
@@ -50,13 +59,13 @@ function KanbanBoard() {
               ))}
             </SortableContext>
           </div>
-          <button
+          {/* <button
             onClick={addColumn}
-            className="h-[60px] w-[350px] min-w-[350px] cursor-pointer rounded-lg bg-mainBackground border-2 border-columnBackground p-4 ring-sky-500 hover:ring-2 flex items-center gap-2"
+            className="h-[60px] w-[350px] min-w-[350px] cursor-pointer rounded-lg bg-mainBackground border-2 mb-2 border-columnBackground p-4 ring-sky-500 hover:ring-2 flex items-center gap-2"
           >
             <PlusIcon />
             Adicionar Coluna
-          </button>
+          </button> */}
         </div>
 
         {createPortal(

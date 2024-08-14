@@ -1,4 +1,8 @@
-function PlusIcon() {
+interface PlusIconProps {
+  size?: number
+}
+
+function PlusIcon({ size = 24 }: PlusIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,6 +10,8 @@ function PlusIcon() {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
+      width={size}
+      height={size}
       className="size-6"
     >
       <path

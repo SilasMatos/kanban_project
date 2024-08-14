@@ -4,8 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        mainBackground: '#0d1117',
-        columnBackground: '#161c22'
+        mainBackground: '#18181B',
+        columnBackground: '#0C0C0C'
+      },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif']
       }
     }
   },

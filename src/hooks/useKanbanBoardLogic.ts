@@ -18,6 +18,8 @@ const useKanbanBoardLogic = () => {
   const generateId = () => Math.floor(Math.random() * 10001);
 
   const addColumn = () => {
+    console.log("Botão de adicionar coluna foi clicado!");
+
     const columnToAdd: Column = {
       id: generateId(),
       title: `Column ${columns.length + 1}`,
