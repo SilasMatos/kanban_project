@@ -18,11 +18,11 @@ const useKanbanBoardLogic = () => {
   const generateId = () => Math.floor(Math.random() * 10001);
 
   const addColumn = () => {
-    console.log("Botão de adicionar coluna foi clicado!");
+
 
     const columnToAdd: Column = {
       id: generateId(),
-      title: `Column ${columns.length + 1}`,
+      title: `Coluna ${columns.length + 1}`,
     };
     setColumns([...columns, columnToAdd]);
   };
@@ -40,7 +40,7 @@ const useKanbanBoardLogic = () => {
     const newTask: Task = {
       id: generateId(),
       columnId,
-      content: `Task ${tasks.length + 1}`,
+      content: `Tarefa ${tasks.length + 1}`,
     };
     setTasks([...tasks, newTask]);
   };

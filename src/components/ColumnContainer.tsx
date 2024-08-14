@@ -122,7 +122,7 @@ function ColumnContainer({
             createTask(column.id)
           }}
         >
-          <PlusIcon /> Nova Task
+          <PlusIcon /> Nova Tarefa
         </button>
       </div>
     </div>
