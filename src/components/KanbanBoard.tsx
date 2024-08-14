@@ -25,9 +25,13 @@ function KanbanBoard({
 }: ReturnType<typeof useKanbanBoardLogic>) {
   if (!columns.length) {
     return (
-      <div className="m-auto flex flex-col  px-[40px] w-full items-center overflow-x-auto justify-center overflow-y-hidden">
-        <img src={img} alt="" className="max-w-[500px]" />
-        <h1 className="text-white font-semibold text-2xl">
+      <div className="m-auto flex flex-col px-[40px] w-full items-center overflow-x-auto justify-center overflow-y-hidden">
+        <img
+          src={img}
+          alt=""
+          className="max-w-[500px] opacity-0 animate-fade-in"
+        />
+        <h1 className="text-white font-semibold text-2xl opacity-0 animate-fade-in">
           Não exite colunas criadas
         </h1>
       </div>

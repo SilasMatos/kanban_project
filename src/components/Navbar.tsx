@@ -2,7 +2,7 @@ import PlusIcon from '../icons/PlusIcon'
 
 function Navbar({ addColumn: addColumn }: { addColumn: () => void }) {
   return (
-    <div className="flex justify-between w-full items-center mb-20 bg-[#1C1C1C] py-4 px-2">
+    <div className="flex justify-between w-full items-center mb-20 bg-[#111111] py-4 px-2">
       <div className="font-semibold">Kanban Project</div>
       <button
         onClick={addColumn}
