@@ -25,11 +25,11 @@ function KanbanBoard({
 }: ReturnType<typeof useKanbanBoardLogic>) {
   if (!columns.length) {
     return (
-      <div className="m-auto flex flex-col px-[40px] w-full items-center overflow-x-auto justify-center overflow-y-hidden">
+      <div className="m-auto flex flex-col w-full items-center overflow-x-auto justify-center overflow-y-hidden">
         <img
           src={img}
           alt=""
-          className="max-w-[500px] opacity-0 animate-fade-in"
+          className="max-w-[400px] opacity-0 animate-fade-in"
         />
         <h1 className="text-white font-semibold text-2xl opacity-0 animate-fade-in">
           Não exite colunas criadas
@@ -63,13 +63,6 @@ function KanbanBoard({
               ))}
             </SortableContext>
           </div>
-          {/* <button
-            onClick={addColumn}
-            className="h-[60px] w-[350px] min-w-[350px] cursor-pointer rounded-lg bg-mainBackground border-2 mb-2 border-columnBackground p-4 ring-sky-500 hover:ring-2 flex items-center gap-2"
-          >
-            <PlusIcon />
-            Adicionar Coluna
-          </button> */}
         </div>
 
         {createPortal(
