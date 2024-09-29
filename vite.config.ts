@@ -15,5 +15,10 @@ export default defineConfig({
       },
     },
   },
+  server: {
+    watch: {
+      usePolling: true,
+    },
+  },
   // Substitua '/subdirectory/' pelo caminho do subdiretório, se necessário
 })

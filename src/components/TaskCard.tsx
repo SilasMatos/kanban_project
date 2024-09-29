@@ -43,7 +43,7 @@ function TaskCard({ task, deleteTask, updateTaskContent }: Props) {
       <div
         ref={setNodeRef}
         style={style}
-        className="opacity-30 bg-mainBackground p-2.5 h-[100px] min-h-[100px] items-center flex text-left rounded-xl border-2 border-sky-500  cursor-grab relative task"
+        className="opacity-30 bg-mainBackground p-2.5 h-[100px] min-h-[100px] items-center flex text-left rounded-xl border-2 border-purple-500  cursor-grab relative task"
       ></div>
     )
   }
@@ -54,7 +54,7 @@ function TaskCard({ task, deleteTask, updateTaskContent }: Props) {
         style={style}
         {...attributes}
         {...listeners}
-        className="bg-mainBackground p-2.5 h-[100px] min-h-[100px] items-center flex text-left rounded-xl hover:ring-2 hover:ring-inset hover:ring-blue-600 cursor-grab relative"
+        className="bg-mainBackground p-2.5 h-[100px] min-h-[100px] items-center flex text-left rounded-xl hover:ring-2 hover:ring-inset hover:ring-purple-600 cursor-grab relative"
       >
         <textarea
           className="h-[90%] w-full relize-none border-none rounded bg-transparent text-white focus:outline-none "
@@ -81,7 +81,7 @@ function TaskCard({ task, deleteTask, updateTaskContent }: Props) {
       onClick={toggleEditMode}
       onMouseEnter={() => setMouseIsOver(true)}
       onMouseLeave={() => setMouseIsOver(false)}
-      className="bg-mainBackground p-2.5 h-[100px] min-h-[100px] items-center flex text-left rounded-xl hover:ring-2 hover:ring-inset hover:ring-blue-600 cursor-grab relative task"
+      className="bg-mainBackground p-2.5 h-[100px] min-h-[100px] items-center flex text-left rounded-xl hover:ring-2 hover:ring-inset hover:ring-purple-600 cursor-grab relative task"
     >
       <p className="my-auto h-[90%] w-full overflow-y-auto overflow-x-hidden whitespace-pre-wrap">
         {' '}
